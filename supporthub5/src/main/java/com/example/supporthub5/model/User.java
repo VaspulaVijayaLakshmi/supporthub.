@@ -29,4 +29,9 @@ public class User {
 
     @Column(name="phone_no")
     private String phoneNo;
+
+    @Column(name="role")
+    private String role;
+
+
 }

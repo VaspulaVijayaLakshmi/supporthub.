@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/api/")
 public class UserController {
 
     @Autowired
     UserService userService;
 
-    @GetMapping("/")
+    @RequestMapping(value="/")
     @ResponseBody
     public String  home() {
         return "WELCOME TO SUPPORT HUB";
@@ -24,7 +24,7 @@ public class UserController {
 
 
 
-
+    @CrossOrigin("https://localhost:3000")
     @RequestMapping(value="/users" , method=RequestMethod.GET)
     public List<User> getAllSubjects()
     {
@@ -32,7 +32,7 @@ public class UserController {
     }
 
 
-
+    @CrossOrigin("https://localhost:3000")
     @RequestMapping(method=RequestMethod.POST , value="/register")
     public void UserRegistration(@RequestBody User user)
     {
@@ -41,6 +41,7 @@ public class UserController {
 
 
 
+   @CrossOrigin("https://localhost:3000")
     @RequestMapping(method= RequestMethod.PUT , value="/users/{id}")
     public void updateUser(@PathVariable Long id,@RequestBody User user)
     {

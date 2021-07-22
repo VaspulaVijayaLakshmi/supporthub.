@@ -1,5 +1,5 @@
 package com.example.supporthub5.service;
-
+//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import com.example.exception.ResourceNotFoundException;
 import com.example.supporthub5.model.User;
 import com.example.supporthub5.repository.UserRepository;
@@ -24,6 +24,11 @@ public class UserService {
     public void UserRegistration(User user) {
         userRepository.save(user);
     }
+
+
+
+
+
 
 
     public User updateUser(Long id,User user) {
